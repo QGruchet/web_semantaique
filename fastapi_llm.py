@@ -16,7 +16,7 @@ class InputData(BaseModel):
 class OutputData(BaseModel):
  response: str
 
-base_model = "mistralai/Mistral-7B-Instruct-v0.2"
+base_model = "mistralai/Mistral-7B-v0.1"
 
 model = AutoModelForCausalLM.from_pretrained(
     base_model,
