@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns1="http://mondomaine.com/mesressources/"
+   xmlns:ns2="http://mondomaine.com/mesressources/56.2%"
+   xmlns:ns3="http://mondomaine.com/mesressources/12.1%"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/Patients">
+    <ns1:received rdf:resource="http://mondomaine.com/mesressources/antibiotics_within_24_hours"/>
+    <ns1:were_admitted_through rdf:resource="http://mondomaine.com/mesressources/the_emergency_department"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/Primary_outcome">
+    <ns1:was rdf:resource="http://mondomaine.com/mesressources/inpatient_mortality"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/6_patients">
+    <ns1:were rdf:resource="http://mondomaine.com/mesressources/multiracial"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/226_patients">
+    <ns1:were rdf:resource="http://mondomaine.com/mesressources/Hispanic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/Significant_difference">
+    <ns1:was rdf:resource="http://mondomaine.com/mesressources/present_in_adjusted_analyses"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/Retrospective_cohort_study">
+    <ns1:of rdf:resource="http://mondomaine.com/mesressources/hospitalized_patients_with_sepsis"/>
+    <ns1:included rdf:resource="http://mondomaine.com/mesressources/patients_who_met_the_Centers_for_Disease_Control_and_Preventions_sepsis_criteria"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/314_patients">
+    <ns1:were rdf:resource="http://mondomaine.com/mesressources/Black"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/101_patients">
+    <ns1:were rdf:resource="http://mondomaine.com/mesressources/Asian"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/The_association_of_LEP_with_health_outcomes">
+    <ns1:is_not_widely_explored_in rdf:resource="http://mondomaine.com/mesressources/sepsis"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/In_sepsis">
+    <ns1:is rdf:resource="http://mondomaine.com/mesressources/a_major_cause_of_mortality_in_the_US"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/1968_patients">
+    <ns1:were rdf:resource="http://mondomaine.com/mesressources/White"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/Finding">
+    <ns1:highlights rdf:resource="http://mondomaine.com/mesressources/a_potential_language-based_inequity_in_sepsis_care"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/Please_note_that_the_provided_RDF_triples_strictly_adhere_to_the_specified_format:_entity1">
+    <ns1:relation rdf:resource="http://mondomaine.com/mesressources/entity2._Let_me_know_if_there_is_anything_else_I_can_assist_you_with."/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/LEP">
+    <ns1:is_associated_with rdf:resource="http://mondomaine.com/mesressources/higher_mortality_rates"/>
+    <ns1:had rdf:resource="http://mondomaine.com/mesressources/no_significant_association_overall_with_sepsis_mortality"/>
+    <ns1:had rdf:resource="http://mondomaine.com/mesressources/no_significant_association_overall_with_sepsis_mortality_in_a_large_diverse_academic_medical_center"/>
+    <ns1:was_associated_with rdf:resource="http://mondomaine.com/mesressources/increased_mortality_among_individuals_identifying_as_non-Hispanic_White"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/Patients_with_limited_English_proficiency_LEP">
+    <ns1:face rdf:resource="http://mondomaine.com/mesressources/multiple_barriers"/>
+    <ns1:are_at_risk_for rdf:resource="http://mondomaine.com/mesressources/worse_health_outcomes"/>
+    <ns1:are_at_risk_for rdf:resource="http://mondomaine.com/mesressources/worse_health_outcomes_compared_with_patients_with_English_proficiency_EP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/Unadjusted_mortality">
+    <ns1:included rdf:resource="http://mondomaine.com/mesressources/466_patients_with_EP"/>
+    <ns1:included rdf:resource="http://mondomaine.com/mesressources/69_patients_with_LEP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/Association">
+    <ns1:between_LEP_and_inpatient_mortality rdf:resource="http://mondomaine.com/mesressources/among_patients_with_sepsis"/>
+    <ns1:between_LEP_and_inpatient_mortality rdf:resource="http://mondomaine.com/mesressources/is_not_widely_explored_in_sepsis"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/38_patients">
+    <ns1:were rdf:resource="http://mondomaine.com/mesressources/Native_Hawaiian_or_Other_Pacific_Islander_or_of_other_race_or_ethnicity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/Nine_patients">
+    <ns1:were rdf:resource="http://mondomaine.com/mesressources/American_Indian_or_Alaska_Native"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/Total_of_2709_patients">
+    <ns1:met rdf:resource="http://mondomaine.com/mesressources/the_inclusion_criteria"/>
+    <ns1:with_a_mean_age_of rdf:resource="http://mondomaine.com/mesressources/65.0_16.2_years"/>
+    <ns2:_were rdf:resource="http://mondomaine.com/mesressources/men"/>
+    <ns3:_had rdf:resource="http://mondomaine.com/mesressources/LEP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/Analysis">
+    <ns1:used rdf:resource="http://mondomaine.com/mesressources/multivariable_generalized_estimating_equation_models_with_propensity_score_adjustment_and_analysis_of_covariance"/>
+    <ns1:was_used rdf:resource="http://mondomaine.com/mesressources/to_analyze_the_association_between_LEP_and_inpatient_mortality_due_to_sepsis"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/No_significant_differences">
+    <ns1:were_found_in rdf:resource="http://mondomaine.com/mesressources/inpatient_mortality_between_LEP_and_EP_in_the_racial_and_ethnic_minority_subgroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/Limited_English_proficiency">
+    <ns1:gathered_via rdf:resource="http://mondomaine.com/mesressources/self-reported_language_preference_in_electronic_medical_records"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/Data">
+    <ns1:were_collected_from rdf:resource="http://mondomaine.com/mesressources/the_electronic_medical_records_of_a_large_New_England_tertiary_care_center"/>
+  </rdf:Description>
+</rdf:RDF>
