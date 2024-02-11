@@ -3,23 +3,15 @@
    xmlns:ns1="http://mondomaine.com/mesressources/"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 >
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/OR">
-    <ns1:ratio rdf:resource="http://mondomaine.com/mesressources/CI"/>
-    <ns1:LEP rdf:resource="http://mondomaine.com/mesressources/EP"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/clinical">
+    <ns1:records rdf:resource="http://mondomaine.com/mesressources/clinical"/>
+    <ns1:diagnosis rdf:resource="http://mondomaine.com/mesressources/clinical"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/manifest">
-    <ns1:manifest rdf:resource="http://mondomaine.com/mesressources/inform"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/model">
+    <ns1:learn rdf:resource="http://mondomaine.com/mesressources/model"/>
+    <ns1:learn rdf:resource="http://mondomaine.com/mesressources/information"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/CI">
-    <ns1:ratio rdf:resource="http://mondomaine.com/mesressources/CI"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/EP">
-    <ns1:LEP rdf:resource="http://mondomaine.com/mesressources/EP"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/inpatient">
-    <ns1:mortality rdf:resource="http://mondomaine.com/mesressources/inpatient"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/test">
-    <ns1:assess rdf:resource="http://mondomaine.com/mesressources/test"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/information">
+    <ns1:obtain rdf:resource="http://mondomaine.com/mesressources/information"/>
   </rdf:Description>
 </rdf:RDF>
