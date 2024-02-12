@@ -1,3 +1,4 @@
+import re
 import xml.etree.ElementTree as ET
 
 import rdflib
@@ -5,16 +6,17 @@ import spacy
 import csv
 import networkx as nx
 import matplotlib.pyplot as plt
-from rdflib import RDF, Literal, Namespace
+from rdflib import RDF, Literal, Namespace, XSD
 
 from owlready2 import get_ontology
 
 from openai import OpenAI
 
 nlp = spacy.load("en_core_sci_md")
+stopwords = nlp.Defaults.stop_words
 
 # Define the base URL for the namespace
-base_url = Namespace("http://mondomaine.com/mesressources/")
+NS1 = Namespace("http://mondomaine.com/mesressources/")
 
 def get_entity_text(text: str):
     """Applique le NLP sur un texte"""
@@ -42,28 +44,49 @@ def load_ontology() -> ET.ElementTree:
     return ontologie
 
 
-def trouver_concept_owl(entite, ontologie) -> str:
-    for concept in ontologie.classes():
-        if concept.label and entite.lower() in concept.label[0].lower():
-            return concept
-    return None
 
 
-def extraire_triplets(doc, ontologie) -> list[tuple[str, str, str]]:
-    print("extraire_triplets\n")
+
+def extraire_triplets(doc, ontologie):
+    print("extraire_triplets_ameliores\n")
     triplets = []
+
+    def trouver_concept_owl(entite, ontologie) -> str:
+        # La logique pour trouver le concept OWL basée sur l'ontologie donnée
+        for concept in ontologie.classes():
+            if concept.label and entite.lower() in concept.label[0].lower():
+                return concept
+        return None
+
+    def est_stopword(texte):
+        return texte.lower() in stopwords
+
+    def ajouter_triplet(token, sujet_text, objet_text):
+        # On utilise la forme lemmatisée du verbe pour la relation
+        relation = token.lemma_
+        # Vérification que ni le sujet ni l'objet ne sont des stopwords
+        if not est_stopword(sujet_text) and not est_stopword(objet_text):
+            triplets.append((sujet_text, relation, objet_text))
+
+    def parcourir_arbre(token, sujet_text, visited_tokens=set()):
+        if token in visited_tokens: return
+        visited_tokens.add(token)
+
+        for child in token.children:
+            objet_concept = trouver_concept_owl(child.text, ontologie)
+            if objet_concept is not None:
+                # Vérification et ajout du triplet si ni le sujet ni l'objet ne sont des stopwords
+                ajouter_triplet(token, sujet_text, child.text)
+            parcourir_arbre(child, sujet_text, visited_tokens)
+
     for entite in doc.ents:
-        sujet_concept = trouver_concept_owl(entite.text, ontologie)
-        if sujet_concept is not None:
-            for token in entite.root.head.children:
-                if token.dep_ in ('amod', 'dobj', 'prep', 'conj', 'nsubj', 'pobj', 'attr', 'advmod', 'acomp', 'agent'):
-                    objet_concept = trouver_concept_owl(token.text, ontologie)
-                    if objet_concept is not None:
-                        triplets.append((entite.text, entite.root.head, token.text))
+        if trouver_concept_owl(entite.text, ontologie) is not None and not est_stopword(entite.text):
+            parcourir_arbre(entite.root.head, entite.text)
+
     return triplets
 
 
-def get_triplet_chatgpt(text, entity, client) -> list[tuple[str, str, str]]:
+def get_triplet_chatgpt(text, entity, triplets_ontology, client) -> list[tuple[str, str, str]]:
     completion = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
@@ -72,8 +95,9 @@ def get_triplet_chatgpt(text, entity, client) -> list[tuple[str, str, str]]:
             {"role": "user",
              "content": f'Hello ChatGPT, I need your assistance in extracting RDF triples.'
                         f' Here\'s the text: {text}. And here\'s the list of entities: {entity}. '
+                        f'Here are a list of triplets {triplets_ontology}. Also try to this to your reflexion.'
                         f'Please use only the entities from the list and the text to extract RDF triples.'
-                        f'You dont need to modify entities, just use them as they are. And please dont use any other entities and dont make a list'
+                        f'You dont need to modify entities, just use them as they are. And please dont use any other entities and dont make a list form'
                         f'Last but not least, in the RDF triples, please use the entities as they are, without any modification.'
                         f'I would like the RDF triples to be formatted in a precise way, following this template: (entity1, relation, entity2). Please ensure that the response is confined to extracting RDF triples and adheres strictly to the specified format.'
              }
@@ -89,6 +113,8 @@ def get_triplet_chatgpt(text, entity, client) -> list[tuple[str, str, str]]:
         t = t.replace("(", "").replace(")", "").replace("\"", "")
         t_split = t.split(", ")
         if len(t_split) == 3:
+            t_split[0] = re.sub(r'\d+\.', '', t_split[0])
+            t_split[0] = re.sub(r'[\,\.\/\-\_]+', '', t_split[0])
             triplets.append((t_split[0], t_split[1], t_split[2]))
 
     return triplets
@@ -101,9 +127,9 @@ def create_rdf_graph(triplets, file_path) -> rdflib.Graph:
     # Ensure proper concatenation of the namespace and the local part
     for sujet_texte, relation_texte, objet_texte in triplets:
         print(sujet_texte, "  ", relation_texte, "  ", objet_texte)
-        sujet_uri = base_url + str(sujet_texte).replace(" ", "_").replace("'", "")
-        relation_uri = base_url + str(relation_texte).replace(" ", "_").replace("'", "")
-        objet_uri = base_url + str(objet_texte).replace(" ", "_").replace("'", "").replace("\'", "")
+        sujet_uri = NS1 + str(sujet_texte).replace(" ", "_").replace("'", "")
+        relation_uri = NS1 + str(relation_texte).replace(" ", "_").replace("'", "")
+        objet_uri = NS1 + str(objet_texte).replace(" ", "_").replace("'", "").replace("\'", "")
 
         sujet = rdflib.URIRef(sujet_uri)
         relation = rdflib.URIRef(relation_uri)
@@ -143,21 +169,25 @@ def print_rdf_graph(g, png_file_path):
 
 
 def fusion_rdf(g1, g2):
-    print("fusion_rdf\n")
-    g = g1 + g2  # Cette opération combine les triplets de g1 et g2 dans un nouveau graphe g
+    print("fusion_rdf_amelioree\n")
 
-    for s1, r1, o1 in g1:
-        for s2, r2, o2 in g2:
-            print("graphe1", "  ", s1, "  ", r1, "  ", o1)
-            print("graphe2", "  ", s2, "  ", r2, "  ", o2)
-            if s1 == s2:
-                g1.add((s1, base_url.label, Literal("same_as")))
-            if o1 == o2:
-                g1.add((o1, base_url.label, Literal("same_as")))
-            if r1 == r2:
-                g1.add((r1, base_url.label, Literal("same_as")))
+    # Création d'un nouveau graphe qui sera le résultat de la fusion
+    g = rdflib.Graph()
 
-    print("end_fusion_rdf\n")
+    shared_property = NS1.isSharedElement
+
+    # Fusion des graphes g1 et g2
+    g = g1 + g2
+
+
+    # Trouver les sujets communs dans g1 et g2
+    sujets_communs = set(g1.subjects()) & set(g2.subjects())
+
+    # Ajouter la propriété spécifique aux nœuds communs
+    for sujet in sujets_communs:
+        g.add((sujet, shared_property, Literal(True, datatype=XSD.boolean)))
+
+    print("end_fusion_rdf_amelioree\n")
     return g
 
 
@@ -165,9 +195,10 @@ if __name__ == '__main__':
     client = OpenAI(api_key="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")
     try:
         # START NLP Spacy
-        number = 15
+        number = 150
         entity = []
-        text_full = extract_text_csv('articles2_clean.csv')
+        text_full = extract_text_csv('truncate_data.csv')
+        print(text_full[number])
         doc = get_entity_text(text_full[number])
         for ent in doc.ents:
             entity.append(ent.text)
@@ -175,28 +206,25 @@ if __name__ == '__main__':
 
         print("entity: ", entity)
 
-        # START Graph ChatGPT
-        triplets = get_triplet_chatgpt(text_full[number], entity, client)  # Extraire les triplets RDF
-        g1 = create_rdf_graph(triplets, 'rdf_graph_llm.xml')  # Créer le graphe RDF
-        print_rdf_graph(g1, "graph_llm")  # Afficher le graphe RDF
-        # END Graph ChatGPT
 
         # START Graph Ontologie
         ontologie = load_ontology()  # Charger l'ontologie
-        triplets = extraire_triplets(doc, ontologie)  # Extraire les triplets RDF
-        g2 = create_rdf_graph(triplets, 'rdf_graph_ontologie.xml')  # Créer le graphe RDF
-        print_rdf_graph(g2, "graph_onto")  # Afficher le graphe RDF
+        triplets_onto = extraire_triplets(doc, ontologie)  # Extraire les triplets RDF
+        g2 = create_rdf_graph(triplets_onto, 'rdf_graph_ontologie.xml')  # Créer le graphe RDF
+        print_rdf_graph(g2, "graph_onto.png")  # Afficher le graphe RDF
         # END Graph Ontologie
-
+        #
+        # START Graph ChatGPT
+        triplets_gpt = get_triplet_chatgpt(text_full[number], entity, triplets_onto, client)  # Extraire les triplets RDF
+        g1 = create_rdf_graph(triplets_gpt, 'rdf_graph_llm.xml')  # Créer le graphe RDF
+        print_rdf_graph(g1, "graph_llm.png")  # Afficher le graphe RDF
+        # END Graph ChatGPT
+        #
         # START Fusion Graph
         g_fusionne = fusion_rdf(g1, g2)  # Fusionner les graphes RDF
         g_fusionne = create_rdf_graph(g_fusionne, 'rdf_graph_fusionne.xml')  # Créer le graphe RDF
-        print_rdf_graph(g_fusionne, "graph_fus")  # Afficher le graphe RDF
+        print_rdf_graph(g_fusionne, "graph_fus.png")  # Afficher le graphe RDF
         # END Fusion Graph
 
     except Exception as e:
         print(e)
-
-# spacy + llm
-# spacy + ontologie
-# spacy + combinaison des deux
