@@ -3,64 +3,120 @@
    xmlns:ns1="http://mondomaine.com/mesressources/"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 >
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/5._assessment">
-    <ns1:can_help rdf:resource="http://mondomaine.com/mesressources/Intensive_Care_Unit"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/superior_colliculus">
+    <ns1:isConnectedTo rdf:resource="http://mondomaine.com/mesressources/trochlear_motoneurons"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/19._experiments">
-    <ns1:have_shown rdf:resource="http://mondomaine.com/mesressources/DGFSD_model_can_significantly_improve_efficiency_of_clinical_auxiliary_diagnosis"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/intracellular_recording">
+    <ns1:captures rdf:resource="http://mondomaine.com/mesressources/excitation"/>
+    <ns1:captures rdf:resource="http://mondomaine.com/mesressources/inhibition"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/6._assessment">
-    <ns1:can_help rdf:resource="http://mondomaine.com/mesressources/clinical_decisions"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/dna_replication">
+    <ns1:hasStructure rdf:resource="http://mondomaine.com/mesressources/intermediates"/>
+    <ns1:appearsCR rdf:resource="http://mondomaine.com/mesressources/CR"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/17._DGFSD_model">
-    <ns1:can_obtain_information_about_the_structure_of rdf:resource="http://mondomaine.com/mesressources/similarity_graph_between_diagnosed_patients_and_patients_to_be_assessed"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/scs">
+    <ns1:evokes rdf:resource="http://mondomaine.com/mesressources/excitation"/>
+    <ns1:evokes rdf:resource="http://mondomaine.com/mesressources/inhibition"/>
+    <ns1:isConnectedTo rdf:resource="http://mondomaine.com/mesressources/vertical_ocular_MNs"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/8._clinical_models">
-    <ns1:are_based_on rdf:resource="http://mondomaine.com/mesressources/mortality_risk"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/CL">
+    <ns1:evokes rdf:resource="http://mondomaine.com/mesressources/monosynaptic_inhibition"/>
+    <ns1:isPreconditionedFor rdf:resource="http://mondomaine.com/mesressources/CL_incevoked_monosynaptic_inhibition"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/1._sepsis">
-    <ns1:is_characterized_by rdf:resource="http://mondomaine.com/mesressources/blood_infection_disease"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/sgsdeltamusts_mutant">
+    <ns1:isArrestedAt rdf:resource="http://mondomaine.com/mesressources/gm_phase"/>
+    <ns1:isArrestedAt rdf:resource="http://mondomaine.com/mesressources/sphase"/>
+    <ns1:hasFragmentationOf rdf:resource="http://mondomaine.com/mesressources/chr_xii"/>
+    <ns1:affects rdf:resource="http://mondomaine.com/mesressources/replication_forks"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/10._evaluation_models">
-    <ns1:only_focus_on rdf:resource="http://mondomaine.com/mesressources/small_amount_of_personal_data"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/trochlear_nerve">
+    <ns1:isDistributedIn rdf:resource="http://mondomaine.com/mesressources/forels_field"/>
+    <ns1:isDistributedIn rdf:resource="http://mondomaine.com/mesressources/interstitial_nucleus_of_cajal_inc"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/11._evaluation_models">
-    <ns1:cause rdf:resource="http://mondomaine.com/mesressources/misdiagnosis_of_sepsis_patients"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/inc">
+    <ns1:evokes rdf:resource="http://mondomaine.com/mesressources/ipsilateral_MSR_excitation"/>
+    <ns1:evokes rdf:resource="http://mondomaine.com/mesressources/ipsilateral_MSR_inhibition"/>
+    <ns1:evokes rdf:resource="http://mondomaine.com/mesressources/contralateral_MSR_inhibition"/>
+    <ns1:isPreconditionedFor rdf:resource="http://mondomaine.com/mesressources/ipsilateral_MSR_excitation_and_inhibition"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/13._core_indicators">
-    <ns1:are_refined_from rdf:resource="http://mondomaine.com/mesressources/massive_clinical_electronic_medical_records"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/anesthetized_cats">
+    <ns1:uses rdf:resource="http://mondomaine.com/mesressources/intracellular_recording"/>
+    <ns1:uses rdf:resource="http://mondomaine.com/mesressources/transneuronal_labeling_techniques"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/12._core_indicators">
-    <ns1:are_refined_for rdf:resource="http://mondomaine.com/mesressources/mortality_risk_assessment_of_sepsis"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/midline_section">
+    <ns1:isBetween rdf:resource="http://mondomaine.com/mesressources/scs"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/2._sepsis">
-    <ns1:is_characterized_by rdf:resource="http://mondomaine.com/mesressources/high_mortality_risk"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/intermediates">
+    <ns1:hasSuppressionMechanism rdf:resource="http://mondomaine.com/mesressources/unknown"/>
+    <ns1:isIsolatedBy rdf:resource="http://mondomaine.com/mesressources/temperaturesensitive_ts_S2_of_mus"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/4._assessment">
-    <ns1:can_help rdf:resource="http://mondomaine.com/mesressources/physicians"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/neural_organization">
+    <ns1:hasPathways rdf:resource="http://mondomaine.com/mesressources/superior_colliculus"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/7._clinical_models">
-    <ns1:are_based_on rdf:resource="http://mondomaine.com/mesressources/conventional_indicators"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/trochlear_motoneurons">
+    <ns1:isAnalyzedIn rdf:resource="http://mondomaine.com/mesressources/anesthetized_cats"/>
+    <ns1:receives rdf:resource="http://mondomaine.com/mesressources/excitation"/>
+    <ns1:receives rdf:resource="http://mondomaine.com/mesressources/inhibition"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/18._experiments">
-    <ns1:have_shown rdf:resource="http://mondomaine.com/mesressources/accuracy_of_the_DGFSD_model_is_superior_to_baseline_methods"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/ffh">
+    <ns1:evokes rdf:resource="http://mondomaine.com/mesressources/mono_and_disynaptic_excitation"/>
+    <ns1:evokes rdf:resource="http://mondomaine.com/mesressources/contralateral_disynaptic_inhibition"/>
+    <ns1:isPreconditionedFor rdf:resource="http://mondomaine.com/mesressources/excitation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/9._conventional_indicators">
-    <ns1:are_shown_to_be_inapplicable_in rdf:resource="http://mondomaine.com/mesressources/accurate_clinical_diagnosis"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/inhibition">
+    <ns1:hasLatenciesOf rdf:resource="http://mondomaine.com/mesressources/and_ms"/>
+    <ns1:hasComponents rdf:resource="http://mondomaine.com/mesressources/disynaptic"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/3._sepsis">
-    <ns1:is_characterized_by rdf:resource="http://mondomaine.com/mesressources/complications"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/musdelta_mutant">
+    <ns1:hasExpansionOf rdf:resource="http://mondomaine.com/mesressources/rdna_locus"/>
+    <ns1:hasFragmentationOf rdf:resource="http://mondomaine.com/mesressources/chr_xii"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/16._DGFSD_model">
-    <ns1:can_learn_individual_clinical_information_about rdf:resource="http://mondomaine.com/mesressources/unassessed_patients"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/rdna_replication_intermediates">
+    <ns1:isElevatedAt rdf:resource="http://mondomaine.com/mesressources/nonpermissive_temperature"/>
+    <ns1:hasPausingOf rdf:resource="http://mondomaine.com/mesressources/replication_forks"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/14._mortality_risk_assessment_model">
-    <ns1:is_proposed_for rdf:resource="http://mondomaine.com/mesressources/sepsis_patients"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/excitation">
+    <ns1:hasLatenciesOf rdf:resource="http://mondomaine.com/mesressources/and_ms"/>
+    <ns1:hasComponents rdf:resource="http://mondomaine.com/mesressources/disynaptic"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/15._mortality_risk_assessment_model">
-    <ns1:is_based_on rdf:resource="http://mondomaine.com/mesressources/deep_learning"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/T3">
+    <ns1:isAppliedTo rdf:resource="http://mondomaine.com/mesressources/trochlear_nerve"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/Please_note_that_these_RDF_triples_are_generated_by_mapping_the_provided_entities_to_subject">
-    <ns1:relation rdf:resource="http://mondomaine.com/mesressources/and_object_positions_in_the_specified_format._The_relationships_between_entities_may_not_always_accurately_convey_the_exact_meaning_of_the_original_text_but_instead_aim_to_capture_the_information_based_on_the_given_entities."/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/induction_of_rad_hyperphosphorylation">
+    <ns1:isDeficientAt rdf:resource="http://mondomaine.com/mesressources/PT_analysis"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/pace">
+    <ns1:isUsedFor rdf:resource="http://mondomaine.com/mesressources/pulsedfield_gel_PACE_analysis"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/trochlear_nucleus">
+    <ns1:isConnectedTo rdf:resource="http://mondomaine.com/mesressources/sc"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/rad_checkpoint_kinase">
+    <ns1:isStronglyPhosphorylated rdf:resource="http://mondomaine.com/mesressources/under_these_conditions"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/interstitial_nucleus_of_cajal_inc">
+    <ns1:isInvestigatedAs rdf:resource="http://mondomaine.com/mesressources/intermediaries"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/rfb">
+    <ns1:isPausePointIn rdf:resource="http://mondomaine.com/mesressources/rdna_replication_intermediates"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/sc">
+    <ns1:isBetween rdf:resource="http://mondomaine.com/mesressources/intermediaries"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/temperaturesensitive_ts_S2_of_mus">
+    <ns1:isIsolatedBy rdf:resource="http://mondomaine.com/mesressources/mus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/mus">
+    <ns1:functionsIn rdf:resource="http://mondomaine.com/mesressources/quality_control_of_replication_forks"/>
+    <ns1:isInvolvedIn rdf:resource="http://mondomaine.com/mesressources/maintenance_of_rdna_repeats_in_vivo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/vertical_ocular_MNs">
+    <ns1:isPresentIn rdf:resource="http://mondomaine.com/mesressources/sacn"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/forels_field">
+    <ns1:isInvestigatedAs rdf:resource="http://mondomaine.com/mesressources/intermediaries"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/PM_neurons">
+    <ns1:areLabeledBy rdf:resource="http://mondomaine.com/mesressources/transneuronal_techniques"/>
   </rdf:Description>
 </rdf:RDF>

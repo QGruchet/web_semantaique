@@ -3,15 +3,23 @@
    xmlns:ns1="http://mondomaine.com/mesressources/"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 >
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/clinical">
-    <ns1:records rdf:resource="http://mondomaine.com/mesressources/clinical"/>
-    <ns1:diagnosis rdf:resource="http://mondomaine.com/mesressources/clinical"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/CL">
+    <ns1:ipsilateral rdf:resource="http://mondomaine.com/mesressources/CL"/>
+    <ns1:ipsilateral rdf:resource="http://mondomaine.com/mesressources/sc"/>
+    <ns1:sc rdf:resource="http://mondomaine.com/mesressources/CL"/>
+    <ns1:incevoke rdf:resource="http://mondomaine.com/mesressources/CL"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/model">
-    <ns1:learn rdf:resource="http://mondomaine.com/mesressources/model"/>
-    <ns1:learn rdf:resource="http://mondomaine.com/mesressources/information"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/structure">
+    <ns1:unknown rdf:resource="http://mondomaine.com/mesressources/structure"/>
+    <ns1:structure rdf:resource="http://mondomaine.com/mesressources/mechanism"/>
+    <ns1:s2 rdf:resource="http://mondomaine.com/mesressources/ts"/>
+    <ns1:phase rdf:resource="http://mondomaine.com/mesressources/gm"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://mondomaine.com/mesressources/information">
-    <ns1:obtain rdf:resource="http://mondomaine.com/mesressources/information"/>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/sc">
+    <ns1:intermediary rdf:resource="http://mondomaine.com/mesressources/sc"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/CR">
+    <ns1:appear rdf:resource="http://mondomaine.com/mesressources/CR"/>
+    <ns1:kinase rdf:resource="http://mondomaine.com/mesressources/rad"/>
   </rdf:Description>
 </rdf:RDF>
