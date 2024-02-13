@@ -1,19 +1,16 @@
 import re
 import xml.etree.ElementTree as ET
-
 import rdflib
 import spacy
 import csv
 import networkx as nx
 import matplotlib.pyplot as plt
 from rdflib import RDF, Literal, Namespace, XSD
-
 from owlready2 import get_ontology
-
 from openai import OpenAI
 
-nlp = spacy.load("en_core_sci_md")
-stopwords = nlp.Defaults.stop_words
+nlp = spacy.load("en_core_sci_md")  # Load the medical NLP model
+stopwords = nlp.Defaults.stop_words     # List of stopwords
 
 # Define the base URL for the namespace
 NS1 = Namespace("http://mondomaine.com/mesressources/")
@@ -27,6 +24,7 @@ def get_entity_text(text: str):
 
 
 def extract_text_csv(csv_file: str) -> list[str]:
+    """Extrait le texte d'un fichier CSV"""
     print("extract_text_csv\n")
     doc = []
     with open(csv_file, mode='r', newline='') as fic_csv:
@@ -39,19 +37,22 @@ def extract_text_csv(csv_file: str) -> list[str]:
 
 
 def load_ontology() -> ET.ElementTree:
+    """Charge l'ontologie"""
+    print("load_ontology\n")
     chemin_ontologie = "SCTO.owl"
     ontologie = get_ontology(chemin_ontologie).load()
+    print("end_load_ontology\n")
     return ontologie
 
 
 
-
-
 def extraire_triplets(doc, ontologie):
-    print("extraire_triplets_ameliores\n")
+    """Extrait les triplets RDF du texte en utilisant l'ontologie"""
+    print("extraire_triplets\n")
     triplets = []
 
     def trouver_concept_owl(entite, ontologie) -> str:
+        """Trouve le concept OWL correspondant à l'entité donnée"""
         # La logique pour trouver le concept OWL basée sur l'ontologie donnée
         for concept in ontologie.classes():
             if concept.label and entite.lower() in concept.label[0].lower():
@@ -59,9 +60,11 @@ def extraire_triplets(doc, ontologie):
         return None
 
     def est_stopword(texte):
+        """Vérifie si le texte donné est un stopword"""
         return texte.lower() in stopwords
 
     def ajouter_triplet(token, sujet_text, objet_text):
+        """Ajoute un triplet RDF à la liste des triplets"""
         # On utilise la forme lemmatisée du verbe pour la relation
         relation = token.lemma_
         # Vérification que ni le sujet ni l'objet ne sont des stopwords
@@ -69,6 +72,7 @@ def extraire_triplets(doc, ontologie):
             triplets.append((sujet_text, relation, objet_text))
 
     def parcourir_arbre(token, sujet_text, visited_tokens=set()):
+        """Parcourt l'arbre de dépendance pour extraire les triplets RDF"""
         if token in visited_tokens: return
         visited_tokens.add(token)
 
@@ -83,10 +87,13 @@ def extraire_triplets(doc, ontologie):
         if trouver_concept_owl(entite.text, ontologie) is not None and not est_stopword(entite.text):
             parcourir_arbre(entite.root.head, entite.text)
 
+    print("end_extraire_triplets\n")
     return triplets
 
 
 def get_triplet_chatgpt(text, entity, triplets_ontology, client) -> list[tuple[str, str, str]]:
+    """Extrait les triplets RDF du texte en utilisant GPT3.5"""
+    print("get_triplet_chatgpt\n")
     completion = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
@@ -113,20 +120,22 @@ def get_triplet_chatgpt(text, entity, triplets_ontology, client) -> list[tuple[s
         t = t.replace("(", "").replace(")", "").replace("\"", "")
         t_split = t.split(", ")
         if len(t_split) == 3:
+            # On retire des éléments inutiles ici de GPT comme les numéros de la liste ou les caractères spéciaux
             t_split[0] = re.sub(r'\d+\.', '', t_split[0])
             t_split[0] = re.sub(r'[\,\.\/\-\_]+', '', t_split[0])
             triplets.append((t_split[0], t_split[1], t_split[2]))
 
+    print("end_get_triplet_chatgpt\n")
     return triplets
 
 
 def create_rdf_graph(triplets, file_path) -> rdflib.Graph:
+    """Crée un graphe RDF à partir des triplets donnés"""
     print("create_rdf_graph\n")
     g = rdflib.Graph()
 
     # Ensure proper concatenation of the namespace and the local part
     for sujet_texte, relation_texte, objet_texte in triplets:
-        print(sujet_texte, "  ", relation_texte, "  ", objet_texte)
         sujet_uri = NS1 + str(sujet_texte).replace(" ", "_").replace("'", "")
         relation_uri = NS1 + str(relation_texte).replace(" ", "_").replace("'", "")
         objet_uri = NS1 + str(objet_texte).replace(" ", "_").replace("'", "").replace("\'", "")
@@ -143,6 +152,7 @@ def create_rdf_graph(triplets, file_path) -> rdflib.Graph:
 
 
 def print_rdf_graph(g, png_file_path):
+    """Affiche le graphe RDF"""
     print("print_rdf_graph\n")
     G = nx.DiGraph()
 
@@ -169,6 +179,7 @@ def print_rdf_graph(g, png_file_path):
 
 
 def fusion_rdf(g1, g2):
+    """Fusionne deux graphes RDF"""
     print("fusion_rdf_amelioree\n")
 
     # Création d'un nouveau graphe qui sera le résultat de la fusion
@@ -178,7 +189,6 @@ def fusion_rdf(g1, g2):
 
     # Fusion des graphes g1 et g2
     g = g1 + g2
-
 
     # Trouver les sujets communs dans g1 et g2
     sujets_communs = set(g1.subjects()) & set(g2.subjects())
@@ -205,7 +215,6 @@ if __name__ == '__main__':
         # END NLP Spacy
 
         print("entity: ", entity)
-
 
         # START Graph Ontologie
         ontologie = load_ontology()  # Charger l'ontologie
