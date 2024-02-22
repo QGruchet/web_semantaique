@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns1="http://mondomaine.com/mesressources/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/CPPs">
+    <ns1:have rdf:resource="http://mondomaine.com/mesressources/physicochemical_parameters"/>
+    <ns1:have rdf:resource="http://mondomaine.com/mesressources/amphipathicity"/>
+    <ns1:have rdf:resource="http://mondomaine.com/mesressources/hydrophobicity"/>
+    <ns1:have rdf:resource="http://mondomaine.com/mesressources/cationicity"/>
+    <ns1:have rdf:resource="http://mondomaine.com/mesressources/pi_groups"/>
+    <ns1:have rdf:resource="http://mondomaine.com/mesressources/functional_characteristics"/>
+    <ns1:have rdf:resource="http://mondomaine.com/mesressources/antimicrobial_activity"/>
+    <ns1:have rdf:resource="http://mondomaine.com/mesressources/cell_penetrating_MMP"/>
+    <ns1:exhibit rdf:resource="http://mondomaine.com/mesressources/antimicrobial_activity"/>
+    <ns1:exhibit rdf:resource="http://mondomaine.com/mesressources/bactericidal_effect"/>
+    <ns1:exhibit rdf:resource="http://mondomaine.com/mesressources/cytotoxicity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/LDP_NLS">
+    <ns1:exhibit rdf:resource="http://mondomaine.com/mesressources/antimicrobial_effect"/>
+    <ns1:exhibit rdf:resource="http://mondomaine.com/mesressources/bactericidal_effect"/>
+    <ns1:exhibit rdf:resource="http://mondomaine.com/mesressources/cytotoxicity"/>
+    <ns1:exhibit rdf:resource="http://mondomaine.com/mesressources/reduced_cytotoxicity"/>
+    <ns1:exhibit rdf:resource="http://mondomaine.com/mesressources/antimicrobial_activity"/>
+    <ns1:exhibit rdf:resource="http://mondomaine.com/mesressources/inhibited_intracellular_infection"/>
+    <ns1:has rdf:resource="http://mondomaine.com/mesressources/intracellular_targets"/>
+    <ns1:used_in rdf:resource="http://mondomaine.com/mesressources/invasion_assays"/>
+    <ns1:is rdf:resource="http://mondomaine.com/mesressources/dual_action_peptide"/>
+    <ns1:is rdf:resource="http://mondomaine.com/mesressources/AMP"/>
+    <ns1:is rdf:resource="http://mondomaine.com/mesressources/CPP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/LDP">
+    <ns1:exhibit rdf:resource="http://mondomaine.com/mesressources/antimicrobial_activity"/>
+    <ns1:exhibit rdf:resource="http://mondomaine.com/mesressources/cytotoxicity"/>
+    <ns1:exhibit rdf:resource="http://mondomaine.com/mesressources/nuclear_localization_CS"/>
+    <ns1:exhibit rdf:resource="http://mondomaine.com/mesressources/cell_penetrating_activity"/>
+    <ns1:used_in rdf:resource="http://mondomaine.com/mesressources/CT"/>
+    <ns1:used_in rdf:resource="http://mondomaine.com/mesressources/uptake_assays"/>
+    <ns1:used_in rdf:resource="http://mondomaine.com/mesressources/time_kill_assays"/>
+    <ns1:used_in rdf:resource="http://mondomaine.com/mesressources/pi_membrane_damage_assays"/>
+    <ns1:killed rdf:resource="http://mondomaine.com/mesressources/MRSA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/ABD">
+    <ns1:used_for rdf:resource="http://mondomaine.com/mesressources/ultrasonography"/>
+    <ns1:used_for rdf:resource="http://mondomaine.com/mesressources/systematic_survey"/>
+    <ns1:AGA rdf:resource="http://mondomaine.com/mesressources/detect"/>
+    <ns1:AGA rdf:resource="http://mondomaine.com/mesressources/follow_up"/>
+    <ns1:AGA rdf:resource="http://mondomaine.com/mesressources/detect_secondary_diseases"/>
+    <ns1:AGA rdf:resource="http://mondomaine.com/mesressources/review_parts"/>
+    <ns1:AGA_diagnostic_technique rdf:resource="http://mondomaine.com/mesressources/detect"/>
+    <ns1:AGA_diagnostic_technique rdf:resource="http://mondomaine.com/mesressources/follow_up"/>
+    <ns1:used_in rdf:resource="http://mondomaine.com/mesressources/published_literature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/DM">
+    <ns1:diagnosed_using rdf:resource="http://mondomaine.com/mesressources/ABD"/>
+    <ns1:have rdf:resource="http://mondomaine.com/mesressources/diagnostic_relevance"/>
+    <ns1:have rdf:resource="http://mondomaine.com/mesressources/ultrasonographic_methods"/>
+    <ns1:exhibit rdf:resource="http://mondomaine.com/mesressources/hepatic_manifestations"/>
+    <ns1:exhibit rdf:resource="http://mondomaine.com/mesressources/complications"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/Latarcin">
+    <ns1:is rdf:resource="http://mondomaine.com/mesressources/Latarcin_derived_peptide"/>
+  </rdf:Description>
+</rdf:RDF>

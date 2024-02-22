@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns1="http://mondomaine.com/mesressources/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/structure">
+    <ns1:unknown rdf:resource="http://mondomaine.com/mesressources/structure"/>
+    <ns1:structure rdf:resource="http://mondomaine.com/mesressources/mechanism"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/PT">
+    <ns1:hyperphosphorylation rdf:resource="http://mondomaine.com/mesressources/rad"/>
+    <ns1:deficient rdf:resource="http://mondomaine.com/mesressources/PT"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/GM">
+    <ns1:phase rdf:resource="http://mondomaine.com/mesressources/GM"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/CR">
+    <ns1:appear rdf:resource="http://mondomaine.com/mesressources/CR"/>
+    <ns1:kinase rdf:resource="http://mondomaine.com/mesressources/rad"/>
+  </rdf:Description>
+</rdf:RDF>

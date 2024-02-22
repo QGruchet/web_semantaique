@@ -122,7 +122,11 @@ def get_triplet_chatgpt(text, entity, triplets_ontology, client) -> list[tuple[s
         if len(t_split) == 3:
             # On retire des éléments inutiles ici de GPT comme les numéros de la liste ou les caractères spéciaux
             t_split[0] = re.sub(r'\d+\.', '', t_split[0])
-            t_split[0] = re.sub(r'[\,\.\/\-\_]+', '', t_split[0])
+            t_split[0] = re.sub(r'[\,\.\/\-\_]+', ' ', t_split[0])
+            t_split[0] = t_split[0].lstrip()
+            t_split[2] = re.sub(r'\d+\.', '', t_split[2])
+            t_split[2] = re.sub(r'[\,\.\/\-\_]+', ' ', t_split[2])
+            t_split[2] = t_split[2].lstrip()
             triplets.append((t_split[0], t_split[1], t_split[2]))
 
     print("end_get_triplet_chatgpt\n")
@@ -201,39 +205,85 @@ def fusion_rdf(g1, g2):
     return g
 
 
+def split_5_lines(text):
+    lignes = text.split('. ')
+    lignes = [ligne if ligne.endswith('.') else ligne + '.' for ligne in lignes]
+
+    # Fonction pour diviser les lignes en segments de 5, en concaténant les lignes dans chaque segment
+    def diviser_en_segments(lignes, taille_segment=5):
+        segments = []
+        for i in range(0, len(lignes), taille_segment):
+            segment = ' '.join(lignes[i:i + taille_segment])
+            segments.append(segment)
+        return segments
+
+    segments = diviser_en_segments(lignes)
+
+    return segments
+
+
+def make_onto_graph(doc, rdf_title, png_title):
+    # START Graph Ontologie
+    ontologie = load_ontology()  # Charger l'ontologie
+    triplets_onto = extraire_triplets(doc, ontologie)  # Extraire les triplets RDF
+    g2 = create_rdf_graph(triplets_onto, rdf_title)  # Créer le graphe RDF
+    print_rdf_graph(g2, png_title)  # Afficher le graphe RDF
+    return g2
+    # END Graph Ontologie
+
+
+def make_llm_graph(text, entity, triplets_onto, client, rdf_title, png_title):
+    # START Graph ChatGPT
+    triplets_gpt = get_triplet_chatgpt(text, entity, triplets_onto, client)  # Extraire les triplets RDF
+    g1 = create_rdf_graph(triplets_gpt, rdf_title)  # Créer le graphe RDF
+    print_rdf_graph(g1, png_title)  # Afficher le graphe RDF
+    return g1
+    # END Graph ChatGPT
+
+
+def make_fusion_graph(g1, g2, rdf_title, png_title):
+    # START Fusion Graph
+    g_fusionne = fusion_rdf(g1, g2)  # Fusionner les graphes RDF
+    g_fusionne = create_rdf_graph(g_fusionne, rdf_title)  # Créer le graphe RDF
+    print_rdf_graph(g_fusionne, png_title)  # Afficher le graphe RDF
+    # END Fusion Graph
+
+
 if __name__ == '__main__':
     client = OpenAI(api_key="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")
     try:
         # START NLP Spacy
-        number = 150
+        number = 13
         entity = []
-        text_full = extract_text_csv('truncate_data.csv')
-        print(text_full[number])
-        doc = get_entity_text(text_full[number])
+
+        # # full text extraction
+        # text_full = extract_text_csv('truncate_data.csv')
+        # doc = get_entity_text(text_full[number])
+        # print("doc: ", doc)
+        # for ent in doc.ents:
+        #     entity.append(ent.text)
+
+        # evaluation
+        text = "Evaluation/15/15.txt"
+        with open(text, 'r') as file:
+            text_full = file.read()
+        # text_seg = split_5_lines(text_full)
+        # print(text_seg)
+
+        doc = get_entity_text(text_full)
         for ent in doc.ents:
             entity.append(ent.text)
         # END NLP Spacy
 
         print("entity: ", entity)
 
-        # START Graph Ontologie
-        ontologie = load_ontology()  # Charger l'ontologie
-        triplets_onto = extraire_triplets(doc, ontologie)  # Extraire les triplets RDF
-        g2 = create_rdf_graph(triplets_onto, 'rdf_graph_ontologie.xml')  # Créer le graphe RDF
-        print_rdf_graph(g2, "graph_onto.png")  # Afficher le graphe RDF
-        # END Graph Ontologie
-        #
-        # START Graph ChatGPT
-        triplets_gpt = get_triplet_chatgpt(text_full[number], entity, triplets_onto, client)  # Extraire les triplets RDF
-        g1 = create_rdf_graph(triplets_gpt, 'rdf_graph_llm.xml')  # Créer le graphe RDF
-        print_rdf_graph(g1, "graph_llm.png")  # Afficher le graphe RDF
-        # END Graph ChatGPT
-        #
-        # START Fusion Graph
-        g_fusionne = fusion_rdf(g1, g2)  # Fusionner les graphes RDF
-        g_fusionne = create_rdf_graph(g_fusionne, 'rdf_graph_fusionne.xml')  # Créer le graphe RDF
-        print_rdf_graph(g_fusionne, "graph_fus.png")  # Afficher le graphe RDF
-        # END Fusion Graph
+        scmt = "0"
+        g_onto = make_onto_graph(doc,
+                                 f'rdf_onto_13_{scmt}.xml', f'onto_graph_13_{scmt}.png')
+        g_llm = make_llm_graph(text_full[number], entity, g_onto, client,
+                               f'rdf_llm_13_{scmt}.xml', f'llm_graph_13_{scmt}.png')
+        make_fusion_graph(g_llm, g_onto,
+                          f'rdf_fus_13_{scmt}.xml', f'fus_graph_13_{scmt}.png')
 
     except Exception as e:
         print(e)

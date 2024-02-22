@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns1="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/test">
+    <ns1:equivalent rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/test"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/role_of_the_perivenous_zone">
+    <ns1:examined_in rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/lca_biotransformation"/>
+    <ns1:examined_in rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/lcainduced_cholestasis"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/EM">
+    <ns1:measure rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/EM"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/BB_bz_a_chemical">
+    <ns1:used_for rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/SP_eye_movements"/>
+    <ns1:used_for rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/c">
+    <ns1:c rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/SP"/>
+    <ns1:movement rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/available_test">
+    <ns1:able_to_distinguish_between rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/neuroleptics"/>
+    <ns1:able_to_distinguish_between rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/benzodiazepines"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/drugs">
+    <ns1:impaired rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/EM_measures"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/relationship">
+    <ns1:investigate rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/relationship"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/doses">
+    <ns1:were_not rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/clinically_equivalent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/lithocholic_acid_lca_metabolism">
+    <ns1:relationship_to rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/cholestasis"/>
+    <ns1:assessed_by rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/gasliquid_chromatographymass_spectrometry"/>
+    <ns1:assessed_by rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/radiochromatography"/>
+  </rdf:Description>
+</rdf:RDF>

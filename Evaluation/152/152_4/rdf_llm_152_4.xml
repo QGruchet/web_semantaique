@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns1="http://mondomaine.com/mesressources/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/rfb">
+    <ns1:is_a rdf:resource="http://mondomaine.com/mesressources/sgsΔmusts_mutant"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/sgsΔmusts_mutant">
+    <ns1:exhibits rdf:resource="http://mondomaine.com/mesressources/linear_structure"/>
+    <ns1:thrives_at rdf:resource="http://mondomaine.com/mesressources/permissive_temperature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/rDNA">
+    <ns1:is_related_to rdf:resource="http://mondomaine.com/mesressources/replication"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/replication">
+    <ns1:involves rdf:resource="http://mondomaine.com/mesressources/intermediates"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/rDNA_locus">
+    <ns1:may_undergo rdf:resource="http://mondomaine.com/mesressources/fragmentation_on_chr_XII"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/quality_control">
+    <ns1:is_crucial_for rdf:resource="http://mondomaine.com/mesressources/maintenance_of_replication_forks"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/elevated_temperature">
+    <ns1:causes rdf:resource="http://mondomaine.com/mesressources/pausing_of_replication_forks"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/temperature">
+    <ns1:can_be rdf:resource="http://mondomaine.com/mesressources/elevated"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/intermediates">
+    <ns1:occur_at rdf:resource="http://mondomaine.com/mesressources/non_permissive_temperature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/replication_forks">
+    <ns1:are_responsible_for rdf:resource="http://mondomaine.com/mesressources/rDNA_repeats_in_vivo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/permissive_temperature">
+    <ns1:provides_evidence_for rdf:resource="http://mondomaine.com/mesressources/functions_of_quality_control"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/musΔ_mutant">
+    <ns1:leads_to rdf:resource="http://mondomaine.com/mesressources/expansion_of_rDNA_locus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/PACE">
+    <ns1:is_associated_with rdf:resource="http://mondomaine.com/mesressources/musΔ_mutant"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/linear_structure">
+    <ns1:is_seen_in rdf:resource="http://mondomaine.com/mesressources/PACE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/Analysis">
+    <ns1:is_about rdf:resource="http://mondomaine.com/mesressources/rDNA"/>
+  </rdf:Description>
+</rdf:RDF>

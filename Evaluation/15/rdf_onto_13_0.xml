@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns1="http://mondomaine.com/mesressources/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/organism">
+    <ns1:use rdf:resource="http://mondomaine.com/mesressources/organism"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/CT">
+    <ns1:consolidate rdf:resource="http://mondomaine.com/mesressources/CT"/>
+    <ns1:assay rdf:resource="http://mondomaine.com/mesressources/pi"/>
+    <ns1:kill rdf:resource="http://mondomaine.com/mesressources/mainly"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/fusion">
+    <ns1:reduce rdf:resource="http://mondomaine.com/mesressources/fusion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/diagnostic">
+    <ns1:relevance rdf:resource="http://mondomaine.com/mesressources/diagnostic"/>
+    <ns1:relevance rdf:resource="http://mondomaine.com/mesressources/findings"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/MM">
+    <ns1:organism rdf:resource="http://mondomaine.com/mesressources/MM"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/pi">
+    <ns1:amphipathicity rdf:resource="http://mondomaine.com/mesressources/pi"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/etiological">
+    <ns1:importance rdf:resource="http://mondomaine.com/mesressources/etiological"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/DM">
+    <ns1:value rdf:resource="http://mondomaine.com/mesressources/DM"/>
+  </rdf:Description>
+</rdf:RDF>

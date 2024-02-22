@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns1="http://mondomaine.com/mesressources/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/data">
+    <ns1:latency rdf:resource="http://mondomaine.com/mesressources/data"/>
+    <ns1:datum rdf:resource="http://mondomaine.com/mesressources/ms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/SC">
+    <ns1:colliculus rdf:resource="http://mondomaine.com/mesressources/SC"/>
+    <ns1:ipsilateral rdf:resource="http://mondomaine.com/mesressources/SC"/>
+    <ns1:stimulation rdf:resource="http://mondomaine.com/mesressources/SC"/>
+    <ns1:intermediary rdf:resource="http://mondomaine.com/mesressources/SC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/CL">
+    <ns1:contralateral rdf:resource="http://mondomaine.com/mesressources/CL"/>
+  </rdf:Description>
+</rdf:RDF>

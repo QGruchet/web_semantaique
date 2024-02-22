@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns1="http://mondomaine.com/mesressources/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/available_test">
+    <ns1:able_to_distinguish_between rdf:resource="http://mondomaine.com/mesressources/benzodiazepines"/>
+    <ns1:able_to_distinguish_between rdf:resource="http://mondomaine.com/mesressources/neuroleptics"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/lithocholic_acid_lca_metabolism">
+    <ns1:assessed_by rdf:resource="http://mondomaine.com/mesressources/radiochromatography"/>
+    <ns1:assessed_by rdf:resource="http://mondomaine.com/mesressources/gasliquid_chromatographymass_spectrometry"/>
+    <ns1:relationship_to rdf:resource="http://mondomaine.com/mesressources/cholestasis"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/BB_bz_a_chemical">
+    <ns1:used_for rdf:resource="http://mondomaine.com/mesressources/c"/>
+    <ns1:used_for rdf:resource="http://mondomaine.com/mesressources/SP_eye_movements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/doses">
+    <ns1:were_not rdf:resource="http://mondomaine.com/mesressources/clinically_equivalent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/role_of_the_perivenous_zone">
+    <ns1:examined_in rdf:resource="http://mondomaine.com/mesressources/lcainduced_cholestasis"/>
+    <ns1:examined_in rdf:resource="http://mondomaine.com/mesressources/lca_biotransformation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/drugs">
+    <ns1:impaired rdf:resource="http://mondomaine.com/mesressources/EM_measures"/>
+  </rdf:Description>
+</rdf:RDF>

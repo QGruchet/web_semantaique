@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns1="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/intermediaries">
+    <ns1:connects rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/SC_and_trochlear_nucleus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/SC">
+    <ns1:stimulation rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/SC"/>
+    <ns1:isLocatedIn rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/cats"/>
+    <ns1:colliculus rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/SC"/>
+    <ns1:isInhibitedBy rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/ipsilateral_SC"/>
+    <ns1:isInhibitedBy rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/contralateral_SC"/>
+    <ns1:isSharedElement rdf:resource="http://mondomaine.com/mesressources/true"/>
+    <ns1:intermediary rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/SC"/>
+    <ns1:ipsilateral rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/SC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/Stimulation">
+    <ns1:evokes rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/inhibition"/>
+    <ns1:evokes rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/excitation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/PM_neurons">
+    <ns1:projectTo rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/trochlear_MNs"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/Forels_field">
+    <ns1:existsIn rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/ipsilaterally"/>
+    <ns1:existsIn rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/bilaterally"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/trochlear_motoneurons">
+    <ns1:haveComponents rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/inhibition"/>
+    <ns1:haveComponents rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/excitation"/>
+    <ns1:have rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/latencies"/>
+    <ns1:areInhibitedBy rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/contralateral_SC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/neural_organization">
+    <ns1:involves rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/pathways"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/T3_wheat_germ_agglutinin_conjugated_horseradish_peroxidase">
+    <ns1:traces rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/trochlear_nerve"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/intracellular_recording">
+    <ns1:isUsedFor rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/trochlear_motoneurons"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/electrophysiologically">
+    <ns1:studies rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/SC_and_trochlear_nucleus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/interstitial_nucleus">
+    <ns1:isPartOf rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/superior_colliculus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/data">
+    <ns1:latency rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/data"/>
+    <ns1:datum rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/ms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/SCs">
+    <ns1:areInSection rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/midline_section"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/superior_colliculus">
+    <ns1:hasAbbreviation rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/SC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/transneuronal_labeling_techniques">
+    <ns1:isAppliedTo rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/trochlear_motoneurons"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/CL">
+    <ns1:contralateral rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/CL"/>
+  </rdf:Description>
+</rdf:RDF>

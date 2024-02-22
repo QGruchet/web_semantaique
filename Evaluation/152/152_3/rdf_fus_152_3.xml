@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns1="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/SACN">
+    <ns1:relatedTo rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/intermediates__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/DNA_replication">
+    <ns1:has rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/structure__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/intermediates">
+    <ns1:partOf rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/DNA_replication__"/>
+    <ns1:involves rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/mechanism__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/CR">
+    <ns1:hasCondition rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/defective__"/>
+    <ns1:appear rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/CR"/>
+    <ns1:kinase rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/rad"/>
+    <ns1:isSharedElement rdf:resource="http://mondomaine.com/mesressources/true"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/PT">
+    <ns1:deficient rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/PT"/>
+    <ns1:hyperphosphorylation rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/rad"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/GM">
+    <ns1:occursAt rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/phase__"/>
+    <ns1:isSharedElement rdf:resource="http://mondomaine.com/mesressources/true"/>
+    <ns1:phase rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/GM"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/sgsΔmusts_cells">
+    <ns1:relatedTo rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/GM__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/structure">
+    <ns1:relatedTo rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/intermediates__"/>
+    <ns1:unknown rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/structure"/>
+    <ns1:isSharedElement rdf:resource="http://mondomaine.com/mesressources/true"/>
+    <ns1:structure rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/mechanism"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/phase">
+    <ns1:includes rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/S_phase__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/temperature_sensitive_ts_S2_of_mus">
+    <ns1:belongsTo rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/non_permissive__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/MMS">
+    <ns1:indicates rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/deficient__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/isolated">
+    <ns1:hasCharacteristic rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/characterized__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/phosphorylated">
+    <ns1:occursUnder rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/conditions__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/induction">
+    <ns1:relatesTo rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/hyperphosphorylation__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/S_phase">
+    <ns1:has rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/Bulk_DNA_replication__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/deficient">
+    <ns1:affectedBy rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/PT__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/mechanism">
+    <ns1:leadsTo rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/suppression__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/temperature">
+    <ns1:occursIn rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/sgsΔmusts_cells__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/conditions">
+    <ns1:leadsTo rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/induction__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/non_permissive">
+    <ns1:occursAt rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/temperature__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/reaction">
+    <ns1:occursIn rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/isolated__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/suppression">
+    <ns1:involves rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/reaction__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/defective">
+    <ns1:undergoes rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/phosphorylated__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/hyperphosphorylation">
+    <ns1:occursIn rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/MMS__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/Bulk_DNA_replication">
+    <ns1:belongsTo rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/CR__"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/characterized">
+    <ns1:occursAt rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/temperature_sensitive_ts_S2_of_mus__"/>
+  </rdf:Description>
+</rdf:RDF>

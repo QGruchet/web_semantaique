@@ -1,0 +1,2 @@
+Analysis of rDNA replication intermediates at the non-permissive temperature revealed elevated pausing of replication forks at the rfb in the sgsΔmusts mutant, and a novel linear structure that was dependent on rad. Pulsed-field gel (PACE) of the musΔ mutant revealed an expansion of the rDNA locus depending on rad, in addition to fragmentation of chr XII in the sgsΔmusts mutant at permissive temperature. This is the first evidence that mus functions in quality control of replication forks and that it is involved in the maintenance of rDNA repeats in vivo.
+

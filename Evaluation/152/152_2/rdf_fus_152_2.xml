@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns1="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/ipsilateral">
+    <ns1:is_part_of rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/SC"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/reciprocal_input_pattern">
+    <ns1:involves rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/SCs"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/CL">
+    <ns1:inhibition rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/CL"/>
+    <ns1:sc rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/CL"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/SC">
+    <ns1:isSharedElement rdf:resource="http://mondomaine.com/mesressources/true"/>
+    <ns1:stimulation rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/SC"/>
+    <ns1:is_related_to rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/CL"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/excitation">
+    <ns1:leads_to rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/inhibition"/>
+    <ns1:occurs_in rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/Stimulation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/Preconditioning_stimulation">
+    <ns1:leads_to rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/CL"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/INC_evoked">
+    <ns1:causes rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/monosynaptic_inhibition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/vertical_ocular_MNs">
+    <ns1:are_related_to rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/SCs"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/INC">
+    <ns1:involves rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/MSR"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/inhibition">
+    <ns1:affects rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/trochlear_motoneurons"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/disynaptic_excitation">
+    <ns1:involves rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/contralateral"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/trochlear_motoneurons">
+    <ns1:are_related_to rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/Preconditioning_stimulation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/Stimulation">
+    <ns1:causes rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/FFH"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/MSR">
+    <ns1:inhibits rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/contralateral_MSR"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/FFH_evoked">
+    <ns1:causes rdf:resource="http://mondomaine.com/mesressources/http://mondomaine.com/mesressources/MSR"/>
+  </rdf:Description>
+</rdf:RDF>
